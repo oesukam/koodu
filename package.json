@@ -4,12 +4,15 @@
   "description": "An Express MVC generator",
   "main": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest --coverage",
+    "test:watch": "jest --watch --coverage",
+    "coveralls": "cat ./coverage/lcov.info | coveralls",
     "dev": "babel-node src/index.js",
     "build:lib": "babel src/index.js -o lib/koodu.js",
     "build:bin": "babel src/index.js -o bin/koodu.js",
-    "build": "npm run lint && npm run build:lib && npm run build:bin",
-    "lint": "node_modules/.bin/eslint src/*"
+    "build": "npm run test && npm run lint && npm run build:lib && npm run build:bin",
+    "lint": "node_modules/.bin/eslint src/*",
+    "lint:fix": "prettier-eslint --write 'src/**/*.js'"
   },
   "bin": {
     "koodu": "bin/index.js"
@@ -40,8 +43,10 @@
     "@babel/cli": "^7.5.5",
     "@babel/core": "^7.5.5",
     "@babel/node": "^7.5.5",
+    "babel-jest": "^24.8.0",
     "eslint": "^6.1.0",
     "eslint-config-airbnb-base": "^14.0.0",
-    "eslint-plugin-import": "^2.18.2"
+    "eslint-plugin-import": "^2.18.2",
+    "prettier-eslint-cli": "^5.0.0"
   }
 }
