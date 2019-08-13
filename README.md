@@ -2,6 +2,8 @@
 
 ---
 
+[![Build Status](https://travis-ci.org/oesukam/koodu.svg?branch=develop)](https://travis-ci.org/oesukam/koodu)
+
 Express API project CLI generator
 
 ## How to install
