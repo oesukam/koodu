@@ -1,0 +1,47 @@
+{
+  "name": "koodu",
+  "version": "1.0.0",
+  "description": "An Express MVC generator",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "babel-node src/index.js",
+    "build:lib": "babel src/index.js -o lib/koodu.js",
+    "build:bin": "babel src/index.js -o bin/koodu.js",
+    "build": "npm run lint && npm run build:lib && npm run build:bin",
+    "lint": "node_modules/.bin/eslint src/*"
+  },
+  "bin": {
+    "koodu": "bin/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oesukam/koodu.git"
+  },
+  "keywords": [
+    "express",
+    "mvc",
+    "generator",
+    "api"
+  ],
+  "author": "Olivier Esuka <oesukam@gmail.com> (https://oesukam.me)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/oesukam/koodu/issues"
+  },
+  "homepage": "https://github.com/oesukam/koodu#readme",
+  "dependencies": {
+    "chalk": "^2.4.2",
+    "figlet": "^1.2.3",
+    "inquirer": "^6.5.1",
+    "shelljs": "^0.8.3"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.5.5",
+    "@babel/core": "^7.5.5",
+    "@babel/node": "^7.5.5",
+    "eslint": "^6.1.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.18.2"
+  }
+}
